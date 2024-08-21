@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field, EmailStr, HttpUrl
 class Product(BaseModel):
     name: str = Field(..., title="Product name")
     description: str = Field(..., title="Product description")
-    price: float = Field(..., gt=0, title="Product price")
+    price: float = Field(..., gt=0, title="Product price", alias='cost')
     tags: list[str] = Field(default_factory=list, title="Owner tags")
 
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     product_01 = Product(
         name="Milk",
         description="Milk from cow",
-        price=1.5,
+        cost=1.5,
         tags=['wood', 'metal', 'plastic']
     )
 
