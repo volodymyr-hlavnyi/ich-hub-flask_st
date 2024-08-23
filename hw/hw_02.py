@@ -11,7 +11,7 @@ class Address(BaseModel):
     house_number: int = Field(..., gt=0)
 
     def __str__(self):
-        return f"City: {self.city}, Street: {self.street}, Hause number: {self.hause_number}"
+        return f"City: {self.city}, Street: {self.street}, Hause number: {self.house_number}"
 
     @field_validator("city")
     def city_must_be_alpha(cls, value: str):
